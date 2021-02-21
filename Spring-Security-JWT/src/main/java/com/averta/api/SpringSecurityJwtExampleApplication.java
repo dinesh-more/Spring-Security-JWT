@@ -23,19 +23,11 @@ public class SpringSecurityJwtExampleApplication {
     public void initUsers() {
     	
     	List<User> users = new ArrayList<>();
-    	users.add(new User(101, "javatechie", "password", "javatechie@gmail.com"));
+    	users.add(new User(101, "admin", "password", "admin@gmail.com"));
     	users.add(new User(102, "user1", "pwd1", "user1@gmail.com"));
     	users.add(new User(103, "user2", "pwd2", "user2@gmail.com"));
     	users.add(new User(104, "user3", "pwd3", "user3@gmail.com"));
     	
-		/*
-		 * List<User> users = Stream.of( 
-		 * 		new User(101, "javatechie", "password","javatechie@gmail.com"), 
-		 * 		new User(102, "user1", "pwd1", "user1@gmail.com"),
-		 * 		new User(103, "user2", "pwd2", "user2@gmail.com"), 
-		 * 		new User(104, "user3","pwd3", "user3@gmail.com"))
-		 * .collect(Collectors.toList());
-		 */
         repository.saveAll(users);
     }
 
