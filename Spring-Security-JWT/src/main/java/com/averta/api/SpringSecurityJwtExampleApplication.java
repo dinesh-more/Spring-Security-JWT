@@ -11,28 +11,27 @@ import javax.annotation.PostConstruct;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @SpringBootApplication
 public class SpringSecurityJwtExampleApplication {
-    @Autowired
-    private UserRepository repository;
 
-    @PostConstruct
-    public void initUsers() {
-    	
-    	List<User> users = new ArrayList<>();
-    	users.add(new User(101, "admin", "password", "admin@gmail.com"));
-    	users.add(new User(102, "user1", "pwd1", "user1@gmail.com"));
-    	users.add(new User(103, "user2", "pwd2", "user2@gmail.com"));
-    	users.add(new User(104, "user3", "pwd3", "user3@gmail.com"));
-    	
-        repository.saveAll(users);
-    }
+	@Autowired
+	private UserRepository repository;
 
-    public static void main(String[] args) {
-        SpringApplication.run(SpringSecurityJwtExampleApplication.class, args);
-    }
+	@PostConstruct
+	public void initUsers() {
+
+		List<User> users = new ArrayList<>();
+		users.add(new User(101, "admin", "password", "admin@gmail.com"));
+		users.add(new User(102, "user1", "pwd1", "user1@gmail.com"));
+		users.add(new User(103, "user2", "pwd2", "user2@gmail.com"));
+		users.add(new User(104, "user3", "pwd3", "user3@gmail.com"));
+
+		repository.saveAll(users);
+	}
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringSecurityJwtExampleApplication.class, args);
+	}
 
 }

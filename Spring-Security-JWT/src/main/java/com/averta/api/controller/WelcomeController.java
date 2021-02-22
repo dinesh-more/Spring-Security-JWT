@@ -3,6 +3,7 @@ package com.averta.api.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,6 +13,7 @@ import com.averta.api.entity.AuthRequest;
 import com.averta.api.util.JwtUtil;
 
 @RestController
+@CrossOrigin
 public class WelcomeController {
 
     @Autowired
